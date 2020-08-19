@@ -1,0 +1,21 @@
+*
+    font-family: 'Lato', sans-serif
+
+    outline: none
+    box-sizing: border-box
+
+button
+    border: none
+    cursor: pointer
+    background: none
+
+ol 
+    counter-reset: section
+    list-style-type: none
+    & > li::before 
+        counter-increment: section
+        content: counters(section,".")
+        margin-right: 5px
+
+li
+    margin-left: -20px

@@ -1,0 +1,58 @@
+
+{
+    "root": true,
+    "env": {
+      "browser": true,
+      "es6": true,
+      "node": true
+    },
+    "extends": [
+      "react-app",
+      "plugin:jsx-a11y/recommended",
+      "eslint:recommended",
+      "airbnb",
+      "airbnb/hooks",
+      "plugin:react/recommended",
+      "plugin:security/recommended",
+      "prettier",
+      "prettier/react"
+    ],
+    "globals": {
+        "Atomics": "readonly",
+        "SharedArrayBuffer": "readonly"
+    },
+    "plugins": [
+        "react",
+        "react-hooks",
+        "jsx-a11y",
+        "prettier"
+    ],
+    "rules": {
+        "object-curly-spacing": ["error", "always"],
+        "quotes": ["error", "single"],
+        "keyword-spacing": "error",
+        "arrow-body-style": ["error", "as-needed"],
+        "block-spacing": "error",
+        "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
+        "react/prop-types": 0,
+        "react-hooks/exhaustive-deps": "warn", // Checks effect dependencies
+        "react/jsx-one-expression-per-line": 0,
+        "react/jsx-tag-spacing": "error",
+        "react/jsx-props-no-spreading": [1, {
+            "html": "ignore"
+        }],
+        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
+        "arrow-parens": ["error", "as-needed"],
+        "import/extensions": [2, "never"],
+        "import/prefer-default-export": "off",
+        "indent": ["error", 4],
+        "dot-notation": [0],
+        "no-underscore-dangle": ["error", { "allow": ["_id"] }],
+        "camelcase": [0],
+        "jsx-a11y/anchor-is-valid": [ "error", {
+            "components": [ "Link" ],
+            "specialLink": [ "hrefLeft", "hrefRight" ],
+            "aspects": [ "invalidHref", "preferButton" ]
+        }]
+}
+}

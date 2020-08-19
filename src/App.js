@@ -1,26 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import { BrowserRouter, Route } from 'react-router-dom';
+import Login from './pages/Login/Login';
+import Main from './pages/Main/Main';
+import Lobby from './pages/Lobby/Lobby';
+import Test from './pages/Test/Test';
+import TestLogin from './pages/TestLogin/TestLogin';
+import Partners from './pages/Partners/Partners';
+import Game from './pages/Game/Game';
+import './App.sass';
+import { UserContextProvider } from './context/user/user';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    return (
+        <BrowserRouter>
+            <div className="App">
+                <div className="bg" />
+                <Route exact path="/login" render={() => <Login />} />
+                <Route exact path="/" render={() => <Main />} />
+                <Route exact path="/lobby" render={() => <Lobby />} />
+                <UserContextProvider>
+                    <Route exact path="/test" render={() => <Test />} />
+                    <Route exact path="/test/partners" render={() => <Partners />} />
+                    <Route exact path="/test/login" render={() => <TestLogin />} />
+                </UserContextProvider>
+                <Route exact path="/game" render={() => <Game />} />
+            </div>
+        </BrowserRouter>
+    );
 }
 
 export default App;
