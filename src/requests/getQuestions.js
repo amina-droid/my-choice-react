@@ -1,6 +1,8 @@
+import { APIadress } from "../utils/API";
+
 const getQuestions = async () => {
     try {
-        const response = await fetch(`http://localhost:7000/questions`);
+        const response = await fetch(`${APIadress}/questions`);
         if (response.status === 500) {
             throw new Error('Сервер не отвечает. Попробуйте позднее');
         }

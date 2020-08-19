@@ -1,6 +1,8 @@
+import { APIadress } from "../utils/API";
+
 const getUser = async id => {
     try {
-        const response = await fetch(`http://localhost:7000/user?id=${id}`);
+        const response = await fetch(`${APIadress}/user?id=${id}`);
         if (response.status === 404) {
             throw new Error('Такого пользователя не существует');
         } 

@@ -1,6 +1,8 @@
+import { APIadress } from "../utils/API";
+
 const postAnswers = async (id, answers) => {
     try {
-        const response = await fetch(`http://localhost:7000/answers`, {
+        const response = await fetch(`${APIadress}/answers`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
