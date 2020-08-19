@@ -1,1 +1,1 @@
-export const APIadress = process.env === 'production' ? 'http://xn--72-9kcd8arods1i.xn--p1ai/api' : 'http://localhost:7000';
+export const APIadress = process.env.NODE_ENV === 'production' ? 'http://xn--72-9kcd8arods1i.xn--p1ai/api' : 'http://localhost:7000';
