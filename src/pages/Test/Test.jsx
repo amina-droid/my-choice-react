@@ -28,7 +28,7 @@ const Test = () => {
     const { state: { user } } = useContext(UserContext);
 
     useEffect(() => {
-        if (user && !user.result) {
+        if (user) {
             questionsRequest();
         }
     }, [user, questionsRequest])
@@ -44,13 +44,13 @@ const Test = () => {
         return (<Redirect to="/test/login" />);
     }
 
-    if (user.result) {
-        return (
-            <Page className={s['test-page']}>
-                <Card title="Вы уже прошли тест." subtitle={`Ваш результат: ${user.result}`}/>
-            </Page>
-        )
-    }
+    //if (user.result) {
+    //    return (
+    //        <Page className={s['test-page']}>
+    //            <Card title="Вы уже прошли тест." subtitle={`Ваш результат: ${user.result}`}/>
+    //        </Page>
+    //    )
+    //}
 
     if (!questions || questionsLoading) {
         return (

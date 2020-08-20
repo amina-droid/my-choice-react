@@ -16,7 +16,7 @@ const Question = ({
     return (
         <Card className={s['question-card']}>
             <div className={s['question__title_number']}>Вопрос №{question.id}</div>
-            <ReactPlayer className={s['question__video']} controls={true} url={question.video} />
+            <ReactPlayer className={s['question__video']} controls playing url={question.video} />
             <form onSubmit={handleSubmit} className={s['question__form']}>
                 <div className={s['question__title']}>{question.question}</div>
                 {question.values.map(answer => {
