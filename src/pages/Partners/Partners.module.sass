@@ -8,22 +8,32 @@
             color: black
             text-decoration: none
     &-card
-        display: flex
+        display: grid
+        grid-template-areas: "photo text" "btn text"
+        grid-template-rows: 480px
         max-width: 900px
-        
-
 
         &__img
+            grid-area: photo
             max-width: 300px
             max-height: 450px
             margin-top: 15px
 
         &__text
+            grid-area: text
             white-space: pre-line
             margin-left: 15px
 
         &__title
+            grid-area: title
             margin-top: 15px
+
+        &__btn
+            grid-area: btn
+            max-height: 40px
+
+        &__video
+            grid-area: video
     
     &__link
         position: fixed
