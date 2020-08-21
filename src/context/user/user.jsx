@@ -2,8 +2,6 @@ import React, { useState, useCallback } from 'react';
 import useRequest from '../../utils/useRequest';
 import getUser from '../../requests/getUser';
 
-
-
 const init = {
     state: {
         user: null,

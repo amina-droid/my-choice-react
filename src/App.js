@@ -10,23 +10,28 @@ import Stream from './pages/Stream/Stream';
 import Game from './pages/Game/Game';
 import './App.sass';
 import { UserContextProvider } from './context/user/user';
+import { TimerContextProvider } from './context/timer/timer';
+import Timer from './components/Timer/Timer';
 
 function App() {
 
     return (
         <BrowserRouter>
             <div className="App">
-                <div className="bg" />
-                <Route exact path="/login" render={() => <Login />} />
-                <Route exact path="/" render={() => <Main />} />
-                <Route exact path="/lobby" render={() => <Lobby />} />
-                <UserContextProvider>
-                    <Route exact path="/test" render={() => <Test />} />
-                    <Route exact path="/test/partners" render={() => <Partners />} />
-                    <Route exact path="/test/login" render={() => <TestLogin />} />
-                </UserContextProvider>
-                <Route exact path="/test/stream" render={() => <Stream />} />
-                <Route exact path="/game" render={() => <Game />} />
+                <TimerContextProvider>
+                    <Timer />
+                    <div className="bg" />
+                    <Route exact path="/login" render={() => <Login />} />
+                    <Route exact path="/" render={() => <Main />} />
+                    <Route exact path="/lobby" render={() => <Lobby />} />
+                    <UserContextProvider>
+                        <Route exact path="/test" render={() => <Test />} />
+                        <Route exact path="/test/partners" render={() => <Partners />} />
+                        <Route exact path="/test/login" render={() => <TestLogin />} />
+                    </UserContextProvider>
+                    <Route exact path="/test/stream" render={() => <Stream />} />
+                    <Route exact path="/game" render={() => <Game />} />
+                </TimerContextProvider>
             </div>
         </BrowserRouter>
     );
