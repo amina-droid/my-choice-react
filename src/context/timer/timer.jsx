@@ -6,8 +6,8 @@ const init = {
     currentTime: null,
 }
 
-const TESTSTART = new Date('Sat Aug 22 2020 01:41:00 GMT+03');
-const TESTEND = new Date('Sat Aug 22 2020 01:41:20 GMT+03');
+const TESTSTART = new Date('Sat Aug 22 2020 13:00:00 GMT+05');
+const TESTEND = new Date('Sat Aug 22 2020 14:30:00 GMT+05');
 
 export const TimerContext = React.createContext(init);
 let timerID = null;
