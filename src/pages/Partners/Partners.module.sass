@@ -7,6 +7,17 @@
         > a
             color: black
             text-decoration: none
+
+        &__button
+            &_back
+                position: fixed
+                top: 20px
+                left: 20px
+                border-radius: 50%
+                width: 70px
+                height: 70px
+                background: none
+                border: none
     &-card
         display: grid
         grid-template-areas: "photo text" "btn text"
@@ -42,3 +53,24 @@
 
     &__svg_2
         bottom: 85px
+
+[data-tooltip] 
+    position: fixed
+
+[data-tooltip]::after
+    content: attr(data-tooltip)
+    position: absolute
+    width: 170px
+    left: 80px
+    top: 0
+    background: #3989c9
+    color: #fff
+    padding: 0.5em
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3)
+    pointer-events: none
+    opacity: 0
+    transition: 0.3s
+   
+[data-tooltip]:hover::after 
+    opacity: 1
+    left: 4em

@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import ReactPlayer from 'react-player';
+import { useHistory } from 'react-router-dom';
 
 import Page from '../../shared/Page/Page';
-import Link from '../../shared/Link/Link';
 
 import speak1 from '../../img/speak1.jpg';
 import speak2 from '../../img/speak2.jpg';
@@ -10,10 +9,12 @@ import speak3 from '../../img/speak3.jpg';
 import speak4 from '../../img/speak4.jpg';
 import speak5 from '../../img/speak5.jpg';
 import { ReactComponent as Rules } from '../../icons/rules.svg';
+import { ReactComponent as Back } from '../../icons/back.svg';
 
 import s from './Partners.module.sass';
 import Speaker from './Speaker/Speaker';
 import Card from '../../shared/Card/Card';
+import Button from '../../shared/Button/Button';
 
 const speakers = [
     {
@@ -97,20 +98,23 @@ const speakers = [
 ]
 
 const Partners = () => {
+    const history = useHistory();
+    const navigateToBack = () => history.push('/test/stream');
     return (
         <Page className={s['partners-page']}>
+            <Button className={s['partners-page__button_back']} onClick={navigateToBack} >
+                <Back />
+            </Button>
             <Card title='Спикеры диктанта' className={s['partners-card__title']} />
             {speakers.map(speaker => {
                 return (
                     <Speaker speaker={speaker}></Speaker>
                 )
             })}
-
-            <Link to="/test/login" className={s['partners__link']} titleCard='Пройти тест' />
-            <a href={process.env.PUBLIC_URL + '/Istoria_pochetnogo_grazhdanstva_v_Rossii.pdf'} target="_blank" rel="noopener" className={s['partners__svg']}>
+            <a data-tooltip='История почетного гражданства в России' href={process.env.PUBLIC_URL + '/Istoria_pochetnogo_grazhdanstva_v_Rossii.pdf'} target="_blank" rel="noopener" className={s['partners__svg']}>
                 <Rules className={s['partners__rules']} />
             </a>
-            <a href={process.env.PUBLIC_URL + '/Ya_grazhdanin_2020_Polozhenie.pdf'} target="_blank" rel="noopener" className={s['partners__svg_2']}>
+            <a data-tooltip='Я гражданин 2020. Положение' href={process.env.PUBLIC_URL + '/Ya_grazhdanin_2020_Polozhenie.pdf'} target="_blank" rel="noopener" className={s['partners__svg_2']}>
                 <Rules className={s['partners__rules']} />
             </a>
         </Page>

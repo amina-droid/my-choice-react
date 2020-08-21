@@ -6,6 +6,7 @@ import Lobby from './pages/Lobby/Lobby';
 import Test from './pages/Test/Test';
 import TestLogin from './pages/TestLogin/TestLogin';
 import Partners from './pages/Partners/Partners';
+import Stream from './pages/Stream/Stream';
 import Game from './pages/Game/Game';
 import './App.sass';
 import { UserContextProvider } from './context/user/user';
@@ -24,6 +25,7 @@ function App() {
                     <Route exact path="/test/partners" render={() => <Partners />} />
                     <Route exact path="/test/login" render={() => <TestLogin />} />
                 </UserContextProvider>
+                <Route exact path="/test/stream" render={() => <Stream />} />
                 <Route exact path="/game" render={() => <Game />} />
             </div>
         </BrowserRouter>

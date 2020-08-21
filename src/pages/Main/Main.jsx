@@ -21,7 +21,7 @@ const Main = () => (
         >
             <img src={organizers} />
         </Card>
-        <Link img={testLogo} to="/test/partners" titleCard='Тест "Я гражданин"' />
+        <Link img={testLogo} to="/test/stream" titleCard='Тест "Я гражданин"' />
 
     </Page>
 )
