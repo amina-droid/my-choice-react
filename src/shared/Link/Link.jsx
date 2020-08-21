@@ -6,15 +6,16 @@ import Card from '../../shared/Card/Card';
 
 import s from './Link.module.sass'
 
-const Link = ({ className='', titleCard, ...props }) => {
+const Link = ({ img, className='', titleCard, ...props }) => {
     const linkClassName = cn(s['link'], className)
     return (
         <NavLink 
             className={linkClassName}
             {...props}>
-            <Card
-                title={titleCard}
-            />
+            <Card>
+                {img && <img src={img} />}
+                <Card.Title>{titleCard}</Card.Title>
+            </Card>
         </NavLink>
     )
 }

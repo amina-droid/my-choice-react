@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import ReactPlayer from 'react-player';
 
 import Page from '../../shared/Page/Page';
-import Card from '../../shared/Card/Card';
 import Link from '../../shared/Link/Link';
 
 import speak1 from '../../img/speak1.jpg';
@@ -13,9 +12,8 @@ import speak5 from '../../img/speak5.jpg';
 import { ReactComponent as Rules } from '../../icons/rules.svg';
 
 import s from './Partners.module.sass';
-import Button from '../../shared/Button/Button';
-import Modal from '../../shared/Modal/Modal';
 import Speaker from './Speaker/Speaker';
+import Card from '../../shared/Card/Card';
 
 const speakers = [
     {
@@ -101,6 +99,7 @@ const speakers = [
 const Partners = () => {
     return (
         <Page className={s['partners-page']}>
+            <Card title='Спикеры диктанта' className={s['partners-card__title']} />
             {speakers.map(speaker => {
                 return (
                     <Speaker speaker={speaker}></Speaker>

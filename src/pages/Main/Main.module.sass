@@ -1,12 +1,8 @@
 .main
-
-
     &-page
         display: flex
         align-items: center
         justify-content: space-around
-
-
 
         > a
             color: black
@@ -15,3 +11,24 @@
             &:hover
                 transform: scale(1.2)
                 transition-duration: 0.3s
+
+            > div
+                display: flex
+                justify-content: center
+                align-items: center
+                flex-direction: column
+
+            & img 
+                max-width: 300px
+                max-height: 300px
+
+    &-card
+        &_organizers
+            min-width: 400px
+            min-height: 200px
+            padding: 10px
+            text-align: center
+            > img 
+                max-width: 400px
+                max-height: 200px
+            

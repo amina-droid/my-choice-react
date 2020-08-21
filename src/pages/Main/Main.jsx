@@ -1,17 +1,27 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
 
 import Page from '../../shared/Page/Page';
 import Card from '../../shared/Card/Card';
+import Link from '../../shared/Link/Link';
+
+import gameLogo from '../../img/logoGame.jpg';
+import testLogo from '../../img/logoTest.jpg';
+import organizers from '../../img/organizers/organizers.png'
 
 import s from './Main.module.sass';
-import Link from '../../shared/Link/Link';
 
 const Main = () => (
     <Page className={s['main-page']}>
 
-        <Link to="/game" titleCard='Игра "Мой выбор"' />
-        <Link to="/test/partners" titleCard='Тест "Я гражданин"' />
+        <Link img={gameLogo} to="/game" titleCard='Игра "Мой выбор"' />
+        <Card
+            className={s['main-card_organizers']}
+            title="Партнеры"
+            
+        >
+            <img src={organizers} />
+        </Card>
+        <Link img={testLogo} to="/test/partners" titleCard='Тест "Я гражданин"' />
 
     </Page>
 )
