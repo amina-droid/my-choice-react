@@ -2,6 +2,7 @@ import React, { useContext, useState, useEffect, useCallback } from 'react';
 import { Redirect } from 'react-router-dom';
 import { UserContext } from '../../context/user/user';
 import { useHistory } from 'react-router-dom';
+import { APIadress } from '../../utils/API';
 
 import Page from '../../shared/Page/Page';
 import Card from '../../shared/Card/Card';
@@ -40,7 +41,9 @@ const Test = () => {
 
 
     useEffect(() => {
-        if (questions && Object.keys(answers).length === questions.length) {
+        if (
+            (questions && Object.keys(answers).length === questions.length) 
+            || (isTestEnd && Object.keys(answers).length)) {
             answersRequest(user.id, answers);
         }
     }, [answers, questions, user, answersRequest])
@@ -49,13 +52,23 @@ const Test = () => {
         return (<Redirect to="/test/login" />);
     }
 
-    //if (user.result) {
-    //    return (
-    //        <Page className={s['test-page']}>
-    //            <Card title="Вы уже прошли тест." subtitle={`Ваш результат: ${user.result}`}/>
-    //        </Page>
-    //    )
-    //}
+    const renderFinal = () => {
+        return (
+            <Page className={s['test-page']}>
+                <Card className={s['test-card']} title="Вы прошли тест" subtitle={`Ваш результат: ${user.result} из 50`}>
+                    <a 
+                        target="_blank" 
+                        rel="noopener"
+                        href={`${APIadress}/certificate?id=${user.id}`}
+                    >Открыть сертификат</a>
+                    <div className={s['test-card__text']}>Если вы хотите получить физический экземпляр сертификата, напишите на почту: <b>allianssonko@gmail.com</b></div>
+                </Card>
+            </Page>
+        )
+    }
+    if (user.result) {
+        return renderFinal();
+    }
 
     if (!isTestStart && !isTestEnd) {
         
@@ -99,7 +112,7 @@ const Test = () => {
                     })
                 }} question={questions[count]} />
             ) : userResult ? (
-                <Card title="Тест окончен" subtitle={`Ваш результат: ${userResult.result} из 50`} />
+                renderFinal()
             ) : (
                 <Card title='Тест окончен' />
             )}

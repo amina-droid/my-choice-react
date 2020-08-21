@@ -9,6 +9,7 @@ const Timer = () => {
     const hours = currentTime && currentTime.getHours();
     const minutes = currentTime && currentTime.getMinutes();
     const seconds = currentTime && currentTime.getSeconds();
+
     const time = (hours || minutes || seconds) ? `${hours}:${minutes}:${seconds}` : '00:00:00';
     let subTitle = 'до начала теста';
     if (isTestStart) {

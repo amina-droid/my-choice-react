@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useContext, useEffect } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 
 const init = {
     isTestStart: false,
@@ -6,12 +6,11 @@ const init = {
     currentTime: null,
 }
 
-const TESTSTART = new Date('Sat Aug 22 2020 13:00:00 GMT+05');
+const TESTSTART = new Date('Sat Aug 22 2020 02:13:00 GMT+03');
 const TESTEND = new Date('Sat Aug 22 2020 14:30:00 GMT+05');
 
 export const TimerContext = React.createContext(init);
 let timerID = null;
-let testStart = false;
 export const TimerContextProvider = ({ children }) => {
     const [isTestStart, setTestStart] = useState(false);
     const [isTestEnd, setTestEnd] = useState(false);
