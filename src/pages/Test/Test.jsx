@@ -46,7 +46,7 @@ const Test = () => {
             || (isTestEnd && Object.keys(answers).length)) {
             answersRequest(user.id, answers);
         }
-    }, [answers, questions, user, answersRequest])
+    }, [answers, questions, user, answersRequest, isTestEnd])
 
     if (!user) {
         return (<Redirect to="/test/login" />);
@@ -55,7 +55,7 @@ const Test = () => {
     const renderFinal = () => {
         return (
             <Page className={s['test-page']}>
-                <Card className={s['test-card']} title="Вы прошли тест" subtitle={`Ваш результат: ${user.result} из 50`}>
+                <Card className={s['test-card']} title="Вы прошли тест" subtitle={`Ваш результат: ${user.result || userResult.result} из 50`}>
                     <a 
                         target="_blank" 
                         rel="noopener"
@@ -66,7 +66,7 @@ const Test = () => {
             </Page>
         )
     }
-    if (user.result) {
+    if (user.result || userResult) {
         return renderFinal();
     }
 
