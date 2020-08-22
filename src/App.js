@@ -18,8 +18,6 @@ function App() {
     return (
         <BrowserRouter>
             <div className="App">
-                <TimerContextProvider>
-                    <Timer />
                     <div className="bg" />
                     <Route exact path="/login" render={() => <Login />} />
                     <Route exact path="/" render={() => <Main />} />
@@ -31,7 +29,6 @@ function App() {
                     </UserContextProvider>
                     <Route exact path="/test/stream" render={() => <Stream />} />
                     <Route exact path="/game" render={() => <Game />} />
-                </TimerContextProvider>
             </div>
         </BrowserRouter>
     );

@@ -1,7 +1,6 @@
-import React, { useContext, useState, useEffect, useCallback } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { Redirect } from 'react-router-dom';
 import { UserContext } from '../../context/user/user';
-import { useHistory } from 'react-router-dom';
 import { APIadress } from '../../utils/API';
 
 import Page from '../../shared/Page/Page';
@@ -12,8 +11,6 @@ import getQuestions from '../../requests/getQuestions';
 import s from './Test.module.sass';
 import useRequest from '../../utils/useRequest';
 import postAnswers from '../../requests/postAnswers';
-import { TimerContext } from '../../context/timer/timer';
-import Button from '../../shared/Button/Button';
 
 const Test = () => {
     const [count, setCount] = useState(0);
@@ -30,8 +27,6 @@ const Test = () => {
     }, answersRequest] = useRequest(postAnswers);
     
     const { state: { user } } = useContext(UserContext);
-    const { isTestEnd, isTestStart } = useContext(TimerContext);
-    const history = useHistory();
 
     useEffect(() => {
         if (user) {
@@ -41,12 +36,10 @@ const Test = () => {
 
 
     useEffect(() => {
-        if (
-            (questions && Object.keys(answers).length === questions.length) 
-            || (isTestEnd && Object.keys(answers).length)) {
+        if (questions && Object.keys(answers).length === questions.length) {
             answersRequest(user.id, answers);
         }
-    }, [answers, questions, user, answersRequest, isTestEnd])
+    }, [answers, questions, user, answersRequest])
 
     if (!user) {
         return (<Redirect to="/test/login" />);
@@ -70,28 +63,6 @@ const Test = () => {
         return renderFinal();
     }
 
-    if (!isTestStart && !isTestEnd) {
-        
-        const goBack = () => history.push('/test/stream');
-        return (
-            <Page className={s['test-page']}>
-                <Card title='Тест еще не начался' className={s['test-card']}>
-                    <Button className={s['test-card__btn']} onClick = {goBack}>Вернуться назад</Button>
-                </Card>
-            </Page>
-        )
-    }
-    if (isTestStart && isTestEnd) {
-        
-        const goBack = () => history.push('/test/stream');
-        return (
-            <Page className={s['test-page']}>
-                <Card title='Тест уже закончился' className={s['test-card']}>
-                    <Button className={s['test-card__btn']} onClick = {goBack}>Вернуться назад</Button>
-                </Card>
-            </Page>
-        )
-    }
     if (!questions || questionsLoading) {
         return (
             <Page className={s['test-page']}>
