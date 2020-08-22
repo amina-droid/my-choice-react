@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactPlayer from 'react-player';
-import { Formik, Form, Field, withFormik } from 'formik';
+import { withFormik } from 'formik';
 
 import Card from '../../shared/Card/Card';
 import Button from '../../shared/Button/Button';
