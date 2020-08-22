@@ -16,9 +16,9 @@ const Stream = () => {
         <Page className={s['stream-page']}>
             <Card
                 className={s['stream-card']}
-                title="Видеотрансляция"
+                title="Видеотрансляция сломалась :("
             >
-                <ReactPlayer className={s['stream-video']} controls playing url="youtu.be/QgTgwo8o-LI" />
+                <div className={s['black']}></div>
                 <div className={s['stream-alert']}>Письмо с логином могло попасть в папку спам! Если письма нет, напишите в поддержку: <b>my.choice7272@gmail.com</b></div>
                 <Button onClick={navigateToPartners} className={s['stream-card__button']}>Спикеры</Button>
                 <Button onClick={navigateToTest} className={s['stream-card__button']}>Пройти тест</Button>
