@@ -48,9 +48,7 @@ const Test = () => {
     const renderFinal = () => {
         return (
             <Page className={s['test-page']}>
-                <Card className={s['test-card']} title="Вы прошли тест" subtitle={`Ваш результат: ${user.result || userResult.result} из 50`}>
-                    <div className={s['test-card__text']}>Если вы хотите получить физический экземпляр сертификата, напишите на почту: <b>allianssonko@gmail.com</b></div>
-                </Card>
+                <Card className={s['test-card']} title="Вы прошли тест" subtitle={`Ваш результат: ${user.result || userResult.result} из 50`} />
             </Page>
         )
     }
