@@ -49,11 +49,6 @@ const Test = () => {
         return (
             <Page className={s['test-page']}>
                 <Card className={s['test-card']} title="Вы прошли тест" subtitle={`Ваш результат: ${user.result || userResult.result} из 50`}>
-                    <a 
-                        target="_blank" 
-                        rel="noopener"
-                        href={`${APIadress}/certificate?id=${user.id}`}
-                    >Открыть сертификат</a>
                     <div className={s['test-card__text']}>Если вы хотите получить физический экземпляр сертификата, напишите на почту: <b>allianssonko@gmail.com</b></div>
                 </Card>
             </Page>
