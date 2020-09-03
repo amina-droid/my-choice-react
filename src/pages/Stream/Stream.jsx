@@ -7,13 +7,19 @@ import Page from '../../shared/Page/Page';
 import Button from '../../shared/Button/Button';
 import Card from '../../shared/Card/Card';
 
+import { ReactComponent as Back } from '../../icons/back.svg';
+
 
 const Stream = () => {
     const history = useHistory();
     const navigateToPartners = () => history.push('/test/partners');
     const navigateToTest = () => history.push('/test');
+    const navigateToBack = () => history.push('/');
     return (
         <Page className={s['stream-page']}>
+            <Button className={s['stream-page__button_back']} onClick={navigateToBack} >
+                <Back />
+            </Button>
             <Card
                 className={s['stream-card']}
                 title="Видеотрансляция с диктанта"

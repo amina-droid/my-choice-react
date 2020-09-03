@@ -1,18 +1,23 @@
 import React, { useContext, useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 import { Redirect } from 'react-router-dom';
 import { UserContext } from '../../context/user/user';
 import { APIadress } from '../../utils/API';
 
 import Page from '../../shared/Page/Page';
 import Card from '../../shared/Card/Card';
+import Button from '../../shared/Button/Button';
 import Question from '../../components/Question/Question';
 import getQuestions from '../../requests/getQuestions';
-
-import s from './Test.module.sass';
 import useRequest from '../../utils/useRequest';
 import postAnswers from '../../requests/postAnswers';
 
+import s from './Test.module.sass';
+
+import { ReactComponent as Back } from '../../icons/back.svg';
+
 const Test = () => {
+    const history = useHistory();
     const [count, setCount] = useState(0);
     const [answers, setAnswers] = useState({});
     const [{ 
@@ -38,9 +43,14 @@ const Test = () => {
         }
     }, [answers, questions, answersRequest])
 
+    const navigateToBack = () => history.push('/test/stream');
+
     const renderFinal = () => {
         return (
             <Page className={s['test-page']}>
+                <Button className={s['test-page__button_back']} onClick={navigateToBack} >
+                    <Back />
+                </Button>
                 <Card className={s['test-card']} title="Вы прошли тест" subtitle={`Ваш результат: ${userResult.result} из ${questions.length}`} />
             </Page>
         )
@@ -60,6 +70,9 @@ const Test = () => {
     const isQuestionsEnd = count === questions.length;
     return(
         <Page className={s['test-page']}>
+            <Button className={s['test-page__button_back']} onClick={navigateToBack} >
+                <Back />
+            </Button>
             {!isQuestionsEnd ? (
                 <Question onSubmit={(answer) => {
                     setCount(count + 1);
