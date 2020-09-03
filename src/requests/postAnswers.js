@@ -1,6 +1,6 @@
 import { APIadress } from "../utils/API";
 
-const postAnswers = async (id, answers) => {
+const postAnswers = async (answers) => {
     try {
         const response = await fetch(`${APIadress}/answers`, {
             method: 'POST',
@@ -8,7 +8,6 @@ const postAnswers = async (id, answers) => {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                id,
                 answers,
             })
         });

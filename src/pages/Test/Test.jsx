@@ -26,33 +26,26 @@ const Test = () => {
         data: userResult 
     }, answersRequest] = useRequest(postAnswers);
     
-    const { state: { user } } = useContext(UserContext);
 
     useEffect(() => {
-        if (user) {
-            questionsRequest();
-        }
-    }, [user, questionsRequest])
+        questionsRequest();
+    }, [questionsRequest])
 
 
     useEffect(() => {
         if (questions && Object.keys(answers).length === questions.length) {
-            answersRequest(user.id, answers);
+            answersRequest(answers);
         }
-    }, [answers, questions, user, answersRequest])
-
-    if (!user) {
-        return (<Redirect to="/test/login" />);
-    }
+    }, [answers, questions, answersRequest])
 
     const renderFinal = () => {
         return (
             <Page className={s['test-page']}>
-                <Card className={s['test-card']} title="Вы прошли тест" subtitle={`Ваш результат: ${user.result || userResult.result} из 50`} />
+                <Card className={s['test-card']} title="Вы прошли тест" subtitle={`Ваш результат: ${userResult.result} из ${questions.length}`} />
             </Page>
         )
     }
-    if (user.result || userResult) {
+    if (userResult) {
         return renderFinal();
     }
 

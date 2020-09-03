@@ -22,11 +22,8 @@ function App() {
                     <Route exact path="/login" render={() => <Login />} />
                     <Route exact path="/" render={() => <Main />} />
                     <Route exact path="/lobby" render={() => <Lobby />} />
-                    <UserContextProvider>
-                        <Route exact path="/test" render={() => <Test />} />
-                        <Route exact path="/test/partners" render={() => <Partners />} />
-                        <Route exact path="/test/login" render={() => <TestLogin />} />
-                    </UserContextProvider>
+                    <Route exact path="/test" render={() => <Test />} />
+                    <Route exact path="/test/partners" render={() => <Partners />} />
                     <Route exact path="/test/stream" render={() => <Stream />} />
                     <Route exact path="/game" render={() => <Game />} />
             </div>
