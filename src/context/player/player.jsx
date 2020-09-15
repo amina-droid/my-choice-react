@@ -15,6 +15,7 @@ const init = {
     login: () => {},
     choiceRoom: () => {},
     createRoom: () => {},
+    leaveRoom: () => {},
 };
 
 export const PlayerContext = React.createContext(init);
@@ -59,13 +60,19 @@ export const PlayerContextProvider = ({ children }) => {
         navigateToGame();
     }, [setRoomName, io, navigateToGame]);
 
-
+    const leaveRoom = useCallback(roomname => {
+        io.emit('room:leave', {
+            roomName: roomname,
+        })
+        setRoomName('');
+    })
     return (
         <PlayerContext.Provider value={{
             userName,
             login,
             choiceRoom,
             createRoom,
+            leaveRoom,
             color,
             roomName,
             rooms,

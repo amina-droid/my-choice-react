@@ -1,28 +1,107 @@
 .game
+    &-field
+        display: flex
+        justify-content: center
+        align-items: center
+        width: 90%
+        height: 90%
+
+        &_svg
+            width: 100%
+            height: 100%
+
+    &__header
+        min-height: 40px
+        width: 100%
+
+        margin-bottom: 20px
+        
+        display: flex
+        justify-content: space-between
+        align-items: center
+
+        position: relative
+
+
     &-page
         display: flex
         justify-content: center
         align-items: center
-        &__button
-            &_back
-                position: fixed
-                top: 20px
-                left: 20px
-                border-radius: 50%
-                width: 70px
-                height: 70px
-                background: none
-                border: none
-
-                &:hover
-                    transform: scale(1.2)
-                    transition: 0.3s
-
-    &-card
-        display: flex
         flex-direction: column
-        justify-content: center
-        align-items: center
+        
+        padding: 20px
 
     &__button
-        margin-top: 15px
+        &_close
+            width: 30px
+            height: 30px
+            border: none
+            padding: 10px 5px
+            background: none
+            position: fixed
+            right: 20px
+            margin: 0 20px
+    &__modal
+        &_leave-room
+            display: flex
+            padding: 50px
+
+
+.players-list
+    &__popover
+        min-height: 100px
+        min-width: 300px
+        
+        background-color: white
+
+        z-index: 100
+
+        border-radius: 5px
+        padding: 15px
+
+        justify-content: space-between
+
+        position: absolute
+        top: 0
+        
+    &__contain
+        position: fixed
+
+
+.popover
+    min-width: 300px
+
+    position: fixed
+    z-index: 100
+
+    border-radius: 5px
+    padding: 15px
+
+    background: white
+
+    justify-content: space-between
+    &__header
+        display: flex
+        justify-content: space-between
+        align-items: center
+
+    &__title
+        margin: 0
+        font-size: 16px
+
+    &__button
+        &_close
+            height: 15px
+            width: 15px
+            padding: 0
+            border: none
+
+.two-button
+    margin: 10px 1%
+    width: 48%
+
+.modal
+    &__title
+        font-size: 30px
+        font-weight: normal
+        margin: 20px

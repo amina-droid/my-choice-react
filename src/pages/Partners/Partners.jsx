@@ -103,7 +103,7 @@ const Partners = () => {
     const navigateToBack = () => history.push('/test/stream');
     return (
         <Page className={s['partners-page']}>
-            <Button className={s['partners-page__button_back']} onClick={navigateToBack} >
+            <Button className={s['partners-page__button_back']} onClick={navigateToBack}>
                 <Back />
             </Button>
             <Card title='Спикеры диктанта' className={s['partners-card__title']} />
