@@ -1,0 +1,119 @@
+.chat
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+
+    min-width: 300px
+    height: 400px
+    
+    padding: 15px
+
+    background-color: white
+    border-radius: 5px
+
+    position: fixed
+    bottom: 20px
+    right: 20px
+    z-index: 10000
+
+    &__body
+        display: inline-block
+        max-width: 265px
+
+    &__list
+        display: flex
+        flex-direction: column
+        height: 280px
+
+        margin: 0
+        padding: 0
+
+        list-style: none
+
+    &__message
+        display: flex
+        flex-direction: column
+
+        padding: 5px 10px
+        margin: 5px
+
+        background: #f4f4f4
+
+        border-radius: 5px
+        max-width: 90%
+
+        word-wrap: break-word
+        white-space: pre-wrap
+
+        align-self: flex-start
+
+        &_my
+            align-self: flex-end
+
+    
+    &__new-message 
+        width: 10px
+        height: 10px
+        
+        background-color: green
+        border-radius: 50%
+
+        position: fixed
+        bottom: 75px
+        right: 75px
+
+    &__author-message
+        font-size: 14px
+
+    &__form
+        display: flex
+        align-items: center
+        margin-top: auto
+
+    &__textarea
+        flex: 1 auto
+        resize: none
+
+    &__button_send
+        width: 30px
+        height: 30px
+        padding: 3px
+
+        border-radius: 50%
+        border: none
+
+        background: none
+
+        flex: 0 30px
+
+    &__header
+        height: 30px
+                
+        display: flex
+        justify-content: space-between
+        align-items: center
+
+    &_close
+        width: 15px
+        height: 15px
+        border: none
+        background: white
+        padding: 0
+
+    &-open-button
+        position: fixed
+        bottom: 20px
+        right: 20px
+        z-index: 10000
+
+        border-radius: 50%
+        border: none
+
+        width: 70px
+        height: 70px
+        padding: 15px
+
+        background-color: white
+
+        &_new-message
+            border: 2px solid green

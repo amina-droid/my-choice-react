@@ -13,6 +13,7 @@
         display: flex
         flex-direction: column
         justify-content: center
+        align-items: center
 
         &:after
             top: 0
@@ -25,3 +26,22 @@
             height: 100%
             background: url(../../img/logo.svg) center no-repeat
             background-size: contain
+
+    
+    &__form
+        position: relative
+        z-index: 1
+        display: flex
+        flex-direction: column
+
+    &__input
+        font-size: 25px
+        height: 40px
+
+    &__button
+        margin-top: 10px
+        height: 40px
+        
+        &:hover
+            transform: scale(0.95)
+            transition: 0.3s

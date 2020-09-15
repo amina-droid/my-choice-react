@@ -1,0 +1,48 @@
+.rooms
+    &-page
+        display: flex
+        justify-content: flex-start
+        align-items: flex-start
+        flex-wrap: wrap
+
+    &__card
+        display: flex
+        justify-content: center
+        align-items: center
+
+        min-width: 150px
+        min-height: 150px
+
+        background: white
+        border-radius: 5px
+        box-shadow: 5px 5px 5px 1px rgba(0, 0, 255, .1)
+
+        padding: 20px
+        margin: 15px
+
+        position: relative
+
+        &:hover
+            transform: scale(1.1)
+            transition-duration: 0.3s
+
+    &__username, &__user-count
+        padding: 10px
+
+    &__user-count
+        position: absolute
+        bottom: 0
+        color: grey
+        font-size: 10px
+
+    &_new-room
+        width: 30px
+
+        &__form
+            display: flex
+            flex-direction: column
+            padding: 10px
+
+        &__input, &__button
+            margin: 10px 0
+            height: 40px

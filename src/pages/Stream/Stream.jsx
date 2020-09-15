@@ -2,12 +2,13 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 import ReactPlayer from 'react-player';
 
-import s from './Stream.module.sass';
 import Page from '../../shared/Page/Page';
 import Button from '../../shared/Button/Button';
 import Card from '../../shared/Card/Card';
 
 import { ReactComponent as Back } from '../../icons/back.svg';
+
+import s from './Stream.module.sass';
 
 
 const Stream = () => {

@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import Page from '../../shared/Page/Page';
+import Speaker from './Speaker/Speaker';
+import Card from '../../shared/Card/Card';
+import Button from '../../shared/Button/Button';
 
 import speak1 from '../../img/speak1.jpg';
 import speak2 from '../../img/speak2.jpg';
@@ -12,9 +15,7 @@ import { ReactComponent as Rules } from '../../icons/rules.svg';
 import { ReactComponent as Back } from '../../icons/back.svg';
 
 import s from './Partners.module.sass';
-import Speaker from './Speaker/Speaker';
-import Card from '../../shared/Card/Card';
-import Button from '../../shared/Button/Button';
+
 
 const speakers = [
     {

@@ -1,5 +1,6 @@
 import React from 'react';
 import cn from 'classnames';
+
 import s from './Page.module.sass';
 
 const Page = ({ className = '', children }) => (

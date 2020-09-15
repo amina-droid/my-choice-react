@@ -1,8 +1,11 @@
 import React, { useContext } from 'react';
+
 import { TimerContext } from '../../context/timer/timer';
 
-import s from './Timer.module.sass';
 import Card from '../../shared/Card/Card';
+
+import s from './Timer.module.sass';
+
 
 const Timer = () => {
     const { currentTime, isTestEnd, isTestStart } = useContext(TimerContext);

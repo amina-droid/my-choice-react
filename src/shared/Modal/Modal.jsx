@@ -2,6 +2,7 @@ import React from 'react';
 import ReactModal from 'react-modal';
 
 import { ReactComponent as Close } from '../../icons/close.svg';
+
 import s from './Modal.module.sass';
 
 const Modal = ({ children, isOpen, onClose }) => {

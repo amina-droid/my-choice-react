@@ -2,6 +2,7 @@ import React from 'react';
 import cn from 'classnames';
 
 import Card from '../../shared/Card/Card'
+
 import partner1 from '../../img/partner-1.png';
 import partner2 from '../../img/partner-2.png';
 import partner3 from '../../img/partner-3.png';

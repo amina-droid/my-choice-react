@@ -32,7 +32,7 @@ const TestLogin = () => {
                     }
                     }>
                     <Form className={s['login__form']} disabled={loading}>
-                        <Field type="text" name="id" />
+                        <Field className={s['login__input']} type="text" name="id" />
                         {error && (<div>{error}</div>)}
                         <Button className={s['login__button']} type="submit">Войти</Button>
                     </Form>

@@ -12,7 +12,7 @@ const Speaker = ({ speaker }) => {
     const handlerClose = () => {
         setOpen(false);
     };
-    return(
+    return (
         <>
             <Card className={s['speaker-card']}>
                 <img className={s['speaker-card__img']} src={speaker.photo} alt={speaker.name} />
