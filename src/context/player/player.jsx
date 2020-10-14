@@ -32,7 +32,7 @@ export const PlayerContextProvider = ({ children }) => {
     const history = useHistory();
     const navigateToGame = useCallback(() => history.push('/game'), [history]);
     
-    useSocket('login', (obj) => {
+    useSocket('login', obj => {
         setUserName(obj.username);
     })
 
@@ -40,7 +40,7 @@ export const PlayerContextProvider = ({ children }) => {
         setRooms(data.rooms);
     })
 
-    const login = useCallback((name) => {
+    const login = useCallback(name => {
         io.emit('login', { username: name })
     }, [io]);
 
@@ -65,7 +65,7 @@ export const PlayerContextProvider = ({ children }) => {
             roomName: roomname,
         })
         setRoomName('');
-    })
+    }, [setRoomName, io])
     return (
         <PlayerContext.Provider value={{
             userName,

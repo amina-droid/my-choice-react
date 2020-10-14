@@ -107,15 +107,13 @@ const Partners = () => {
                 <Back />
             </Button>
             <Card title='Спикеры диктанта' className={s['partners-card__title']} />
-            {speakers.map(speaker => {
-                return (
-                    <Speaker speaker={speaker}></Speaker>
-                )
-            })}
-            <a data-tooltip='История почетного гражданства в России' href={process.env.PUBLIC_URL + '/Istoria_pochetnogo_grazhdanstva_v_Rossii.pdf'} target="_blank" rel="noopener" className={s['partners__svg']}>
+            {speakers.map(speaker => (
+                <Speaker speaker={speaker} />
+            ))}
+            <a data-tooltip='История почетного гражданства в России' href={`${process.env.PUBLIC_URL  }/Istoria_pochetnogo_grazhdanstva_v_Rossii.pdf`} target="_blank" rel="noopener" className={s['partners__svg']}>
                 <Rules className={s['partners__rules']} />
             </a>
-            <a data-tooltip='Я гражданин 2020. Положение' href={process.env.PUBLIC_URL + '/Ya_grazhdanin_2020_Polozhenie.pdf'} target="_blank" rel="noopener" className={s['partners__svg_2']}>
+            <a data-tooltip='Я гражданин 2020. Положение' href={`${process.env.PUBLIC_URL  }/Ya_grazhdanin_2020_Polozhenie.pdf`} target="_blank" rel="noopener" className={s['partners__svg_2']}>
                 <Rules className={s['partners__rules']} />
             </a>
         </Page>

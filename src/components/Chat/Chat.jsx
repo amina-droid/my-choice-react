@@ -1,6 +1,6 @@
 import React, { useState, useContext, useCallback } from 'react';
 import cn from 'classnames';
-import { Formik, Form, Field } from 'formik';
+import { Formik } from 'formik';
 import CustomScroll from 'react-custom-scroll';
 
 import 'react-custom-scroll/dist/customScroll.css';
@@ -32,7 +32,6 @@ const Chat = () => {
         }
         
     })
-    console.log(messages)
 
     const sendMessage = useCallback(message => {
         io.emit('chat:message', {
@@ -52,7 +51,7 @@ const Chat = () => {
     if (!userName) {
         return null;
     }
-    
+
     if (!isOpen) {
         const openButtonClassName = cn(
             s['chat-open-button'],

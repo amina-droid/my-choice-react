@@ -29,7 +29,7 @@ const GameLogin = () => {
                     initialValues={{
                         name: '',
                     }}
-                    onSubmit={(values) => {
+                    onSubmit={values => {
                         login(values.name);
                     }
                     }>

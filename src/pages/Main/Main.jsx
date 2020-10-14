@@ -13,7 +13,7 @@ import s from './Main.module.sass';
 const Main = () => (
     <Page className={s['main-page']}>
 
-        <Link img={gameLogo} to="/game/login" titleCard='Игра "Мой выбор"' />
+        <Link img={gameLogo} to="/v1/game" titleCard='Игра "Мой выбор"' />
         <Card
             className={s['main-card_organizers']}
             title="Партнеры"
